@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Examples</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            margin:30px;
+        }
+
+        #box{
+            width:150px;
+            height:100px;
+            border:2px solid black;
+            margin-top:20px;
+            background-color:white;
+        }
+
+        button{
+            margin:5px;
+            padding:8px 15px;
+        }
+
+        input,select{
+            margin:10px 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>JavaScript Events Examples</h1>
+
+<!-- CLICK EVENT -->
+
+<button id="clickButton">Click Me</button>
+
+<p id="clickMessage"></p>
+
+
+<!-- DOUBLE CLICK EVENT -->
+
+<button id="doubleButton">Double Click Me</button>
+
+<p id="doubleMessage"></p>
+
+
+<!-- MOUSE EVENTS -->
+
+<p id="mouseText">Move your mouse over this text.</p>
+
+
+<!-- KEYDOWN EVENT -->
+
+<label>Type something:</label>
+
+<input type="text" id="keyboard">
+
+<p id="keyMessage"></p>
+
+
+<!-- CHANGE EVENT -->
+
+<label>Select a Colour:</label>
+
+<select id="colour">
+
+<option>Select</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Green</option>
+
+</select>
+
+<p id="colourMessage"></p>
+
+
+<!-- SUBMIT EVENT -->
+
+<form id="myForm">
+
+<label>Enter your name:</label>
+
+<input type="text" id="username">
+
+<button type="submit">Submit</button>
+
+</form>
+
+<p id="formMessage"></p>
+
+
+<!-- COLOUR BOX -->
+
+<label>Pick Background Colour:</label>
+
+<input type="color" id="picker">
+
+<div id="box"></div>
+
+
+<script>
+
+//=========================
+// CLICK EVENT
+//=========================
+
+const clickButton = document.getElementById("clickButton");
+
+function clickFunction(){
+
+    alert("Button Clicked!");
+
+    document.getElementById("clickMessage").textContent =
+    "You clicked the button.";
+
+}
+
+clickButton.addEventListener("click", clickFunction);
+
+
+//=========================
+// DOUBLE CLICK EVENT
+//=========================
+
+const doubleButton = document.getElementById("doubleButton");
+
+function doubleClickFunction(){
+
+    alert("Button Double Clicked!");
+
+    document.getElementById("doubleMessage").textContent =
+    "You double clicked the button.";
+
+}
+
+doubleButton.addEventListener("dblclick", doubleClickFunction);
+
+
+//=========================
+// MOUSEOVER EVENT
+//=========================
+
+const mouseText = document.getElementById("mouseText");
+function mouseOverFunction(){
+
+    mouseText.textContent = "Mouse is over the text.";
+
+}
+
+mouseText.addEventListener("mouseover", mouseOverFunction);
+
+//=========================
+// MOUSEOUT EVENT
+//=========================
+
+function mouseOutFunction(){
+
+    mouseText.textContent = "Mouse left the text.";
+
+}
+
+mouseText.addEventListener("mouseout", mouseOutFunction);
+
+
+//=========================
+// KEYDOWN EVENT
+//=========================
+
+const keyboard = document.getElementById("keyboard");
+
+function keyDownFunction(event){
+
+    document.getElementById("keyMessage").textContent =
+    "You pressed: " + event.key;
+
+}
+
+keyboard.addEventListener("keydown", keyDownFunction);
+
+
+//=========================
+// CHANGE EVENT
+//=========================
+
+const colour = document.getElementById("colour");
+
+function changeFunction(){
+
+    document.getElementById("colourMessage").textContent =
+    "Selected Colour: " + colour.value;
+
+}
+
+colour.addEventListener("change", changeFunction);
+
+
+//=========================
+// SUBMIT EVENT
+//=========================
+
+const myForm = document.getElementById("myForm");
+
+function submitFunction(event){
+
+    event.preventDefault();
+
+    const username =
+    document.getElementById("username").value;
+
+    document.getElementById("formMessage").textContent =
+    "Welcome " + username;
+
+}
+
+myForm.addEventListener("submit", submitFunction);
+
+
+//=========================
+// COLOUR PICKER EVENT
+//=========================
+
+const picker = document.getElementById("picker");
+const box = document.getElementById("box");
+
+function colourPickerFunction(){
+
+    box.style.backgroundColor = picker.value;
+
+}
+
+picker.addEventListener("change", colourPickerFunction);
+
+</script>
+
+</body>
+</html>
+
