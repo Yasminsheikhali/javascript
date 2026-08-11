@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Math Operations</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 50px;
+}
+
+.container {
+  background-color: white;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Math Operations</h1>
+
+  <button id="multiplyBtn">Multiply</button>
+  <button id="divideBtn">Divide</button>
+  <button id="subtractBtn">Subtract</button>
+
+  <div id="result">Loading results...</div>
+
+</div>
+
+<script type="module">
+
+// Import the functions from the module
+import { multiply, divide, subtract } from "./mathOperations.js";
+
+const a = 10, b = 5;
+
+// Calculate the results
+const multiplication = multiply(a, b);
+const division = divide(a, b);
+const subtraction = subtract(a, b);
+
+// Display the results in the page
+document.getElementById("result").innerHTML = `
+  <p>Multiply: ${a} * ${b} = ${multiplication}</p>
+  <p>Divide: ${a} / ${b} = ${division}</p>
+  <p>Subtract: ${a} - ${b} = ${subtraction}</p>
+`;
+
+</script>
+
+</body>
+</html>
