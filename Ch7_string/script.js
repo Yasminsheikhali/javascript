@@ -118,7 +118,7 @@ let fullName = "John Doe"; // index = position number
 // // Checks how the string begins.
 // // ============================================
 
-console.log(fullName.startsWith("John"));
+// console.log(fullName.startsWith("John"));
 
 // // Output:
 // // true
@@ -144,7 +144,7 @@ console.log(fullName.startsWith("John"));
 // // ============================================
 
 // console.log(fullName.slice(0, 4));
-// console.log(fullName.slice(5));
+// // console.log(fullName.slice(5));
 
 // // Output:
 // // John
